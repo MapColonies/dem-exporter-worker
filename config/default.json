@@ -13,5 +13,34 @@
       "url": "http://telemetryUrl/metrics",
       "interval": "3"
     }
+  },
+  "jobManager": {
+    "url": "https://job-manager-int-job-manager-route-integration.apps.j1lk3njp.eastus.aroapp.io"
+  },
+  "s3": {
+    "accessKeyId": "raster",
+    "secretAccessKey": "rasterPassword",
+    "endpointUrl": "http://10.8.0.9:9000",
+    "bucket": "dem-int",
+    "destinationBucket": "dem-int-export",
+    "forcePathStyle": true,
+    "sslEnabled": false
+  },
+  "fs": {
+    "source": {
+      "pvPath": "/home/ellama/export"
+    },
+    "destination": {
+      "pvPath": "/home/ellama/demExport"
+    }
+  },
+  "worker": {
+    "configProvider": {
+      "source": "s3",
+      "destination": "s3"
+    },
+    "jobType": "RECORD_DEM",
+    "taskType": "DEM Export",
+    "waitTime": 5000
   }
 }
