@@ -15,7 +15,7 @@ export class FSProvider implements IConfigProvider {
 
   public constructor(){
     this.logger = container.resolve(SERVICES.LOGGER);
-    this.config = config.get<FSConfig>("FS"); 
+    this.config = config.get<FSConfig>('fs');
   }
 
   public async getFile(filePath: string): Promise<IData> {
